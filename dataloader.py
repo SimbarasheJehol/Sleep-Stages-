@@ -2,6 +2,7 @@
 https://github.com/akaraspt/deepsleepnet
 Copyright 2017 Akara Supratak and Hao Dong.  All rights reserved.
 '''
+
 import os
 import numpy as np
 import re

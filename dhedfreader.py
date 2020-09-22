@@ -19,6 +19,7 @@ log = logging.getLogger(__name__)
 class EDFEndOfData: pass
 
 
+
 def tal(tal_str):
   '''Return a list with (onset, duration, annotation) tuples for an EDF+ TAL
   stream.
@@ -27,6 +28,8 @@ def tal(tal_str):
     '(?:\x15(?P<duration>\d+(?:\.\d*)?))?' + \
     '(\x14(?P<annotation>[^\x00]*))?' + \
     '(?:\x14\x00)'
+
+
 
   def annotation_to_list(annotation):
     return unicode(annotation, 'utf-8').split('\x14') if annotation else []
@@ -38,6 +41,7 @@ def tal(tal_str):
       annotation_to_list(dic['annotation']))
 
   return [parse(m.groupdict()) for m in re.finditer(exp, tal_str)]
+
 
 
 def edf_header(f):

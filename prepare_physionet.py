@@ -17,7 +17,7 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-from mne import Epochs, pick_types, find_events
+from mne import Epochs, pick_types, find_events #open source library 
 from mne.io import concatenate_raws, read_raw_edf
 
 import dhedfreader
